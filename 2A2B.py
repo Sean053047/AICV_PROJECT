@@ -25,6 +25,9 @@ while  str_in != quiz:
     if len(str_in) != 4:
         print("you should input 4 digits.")
         continue
+    if (str_in.count(str_in[0])+str_in.count(str_in[1])+str_in.count(str_in[2])+str_in.count(str_in[3]))>4:
+        print("you can't repeat key same numbers.")
+        continue
     A = 0 
     error_set = set()
     correct_set =set()
@@ -34,9 +37,9 @@ while  str_in != quiz:
             correct_set.add(str_in[i])
         else: 
             error_set.add(str_in[i])
-    print(error_set)
-    print(correct_set)
-    print(quiz_set)
+    # print(error_set)
+    # print(correct_set)
+    # print(quiz_set)
     B = len((error_set-correct_set)&quiz_set)
     print(A,"A",B,"B")
 print("clear")
